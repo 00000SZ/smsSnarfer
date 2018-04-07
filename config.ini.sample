@@ -1,0 +1,9 @@
+[email]
+imapServer = outlook.office365.com
+imapPort = 993
+imapUsername = user@domain.com
+imapPassword = password
+imapFolder = SMS
+[slack]
+slackToken = slack-api-token
+slackChannel= sms
