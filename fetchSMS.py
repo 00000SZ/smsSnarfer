@@ -5,17 +5,17 @@ from slackclient import SlackClient
 
 config = configparser.RawConfigParser()
 config.read('config.ini')
-imapServer = config.get('email', 'imapServer')
-imapPort = config.getint('email', 'imapPort')
-imapUsername = config.get('email', 'imapUsername')
-imapPassword = config.get('email', 'imapPassword')
-imapFolder = config.get('email', 'imapFolder')
+imapServer = config.get('email','imapServer')
+imapPort = config.getint('email','imapPort')
+imapUsername = config.get('email','imapUsername')
+imapPassword = config.get('email','imapPassword')
+imapFolder = config.get('email','imapFolder')
+imapInterval = config.getint('email','imapInterval')
 slackToken = config.get('slack', 'slackToken')
 slackChannel = config.get('slack', 'slackChannel')
 slackUsername = config.get('slack', 'slackUsername')
 
 print("""\
---------------------------------------------------------------------------------------
   ██████ ███▄ ▄███▓ ██████      ██████ ███▄    █ ▄▄▄      ██▀███   █████▓█████ ██▀███
 ▒██    ▒▓██▒▀█▀ ██▒██    ▒    ▒██    ▒ ██ ▀█   █▒████▄   ▓██ ▒ ██▓██   ▒▓█   ▀▓██ ▒ ██▒
 ░ ▓██▄  ▓██    ▓██░ ▓██▄      ░ ▓██▄  ▓██  ▀█ ██▒██  ▀█▄ ▓██ ░▄█ ▒████ ░▒███  ▓██ ░▄█ ▒
@@ -25,8 +25,8 @@ print("""\
 ░ ░▒  ░ ░  ░      ░ ░▒  ░ ░   ░ ░▒  ░ ░ ░░   ░ ▒░ ▒   ▒▒ ░ ░▒ ░ ▒░░      ░ ░  ░ ░▒ ░ ▒░
 ░  ░  ░ ░      ░  ░  ░  ░     ░  ░  ░    ░   ░ ░  ░   ▒    ░░   ░ ░ ░      ░    ░░   ░
       ░        ░        ░           ░          ░      ░  ░  ░              ░  ░  ░
----------------------------------------------------------------------------------------
-https://github.com/00000sz/smsSnarfer
+
+  ------- https://github.com/00000sz/smsSnarfer
 """)
 
 print "\nSetting up..."
@@ -95,4 +95,4 @@ while True:
             #print "Marking messageid "+str(mid)+" as read\n"
             #mail.store(mid.replace(' ',','),'+FLAGS','\SEEN')
 
-    time.sleep(5)
+    time.sleep(imapInterval)
