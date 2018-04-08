@@ -11,7 +11,8 @@ imapUsername = config.get('email', 'imapUsername')
 imapPassword = config.get('email', 'imapPassword')
 imapFolder = config.get('email', 'imapFolder')
 slackToken = config.get('slack', 'slackToken')
-slackChannel = config.get ('slack', 'slackChannel')
+slackChannel = config.get('slack', 'slackChannel')
+slackUsername = config.get('slack', 'slackUsername')
 
 print("""\
 --------------------------------------------------------------------------------------
@@ -82,6 +83,7 @@ while True:
                     sc.api_call(
                         "chat.postMessage",
                         channel=slackChannel,
+                        username=slackUsername,
                         text="SMS from "+msource+": "+mpayload
                     )
                     print "Sent to Slack!\n"

@@ -7,3 +7,4 @@ imapFolder = SMS
 [slack]
 slackToken = slack-api-token
 slackChannel= sms
+slackUsername = smsbot
