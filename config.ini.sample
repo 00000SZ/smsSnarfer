@@ -4,7 +4,7 @@ imapPort = 993
 imapUsername = user@domain.com
 imapPassword = password
 imapFolder = SMS
-imapInterval = 2
+imapInterval = 5
 [slack]
 slackToken = slack-api-token
 slackChannel= sms
